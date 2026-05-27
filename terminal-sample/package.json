@@ -1,0 +1,97 @@
+{
+	"name": "vscode-terminal-api-example",
+	"displayName": "vscode-terminal-api-example",
+	"description": "abc",
+	"version": "0.0.1",
+	"publisher": "Tyriar",
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"enableProposedApi": true,
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:terminalTest.createAndSend",
+		"onCommand:terminalTest.createTerminal",
+		"onCommand:terminalTest.createZshLoginShell",
+		"onCommand:terminalTest.dispose",
+		"onCommand:terminalTest.hide",
+		"onCommand:terminalTest.onData",
+		"onCommand:terminalTest.processId",
+		"onCommand:terminalTest.sendText",
+		"onCommand:terminalTest.sendTextNoNewLine",
+		"onCommand:terminalTest.show",
+		"onCommand:terminalTest.showPreserveFocus",
+		"onCommand:terminalTest.terminals"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "terminalTest.createAndSend",
+				"title": "Terminal API: Create Terminal and Immediately Send"
+			},
+			{
+				"command": "terminalTest.createTerminal",
+				"title": "Terminal API: Create Terminal"
+			},
+			{
+				"command": "terminalTest.createZshLoginShell",
+				"title": "Terminal API: Create Terminal (zsh login shell)"
+			},
+			{
+				"command": "terminalTest.dispose",
+				"title": "Terminal API: Dispose"
+			},
+			{
+				"command": "terminalTest.hide",
+				"title": "Terminal API: Hide"
+			},
+			{
+				"command": "terminalTest.onData",
+				"title": "Terminal API: Attach data listener"
+			},
+			{
+				"command": "terminalTest.processId",
+				"title": "Terminal API: Get process ID"
+			},
+			{
+				"command": "terminalTest.sendText",
+				"title": "Terminal API: Send Text"
+			},
+			{
+				"command": "terminalTest.sendTextNoNewLine",
+				"title": "Terminal API: Send Text (no implied \\n)"
+			},
+			{
+				"command": "terminalTest.show",
+				"title": "Terminal API: Show"
+			},
+			{
+				"command": "terminalTest.showPreserveFocus",
+				"title": "Terminal API: Show (preserving focus)"
+			},
+			{
+				"command": "terminalTest.terminals",
+				"title": "Terminal API: View terminals"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "tslint ./src/*.ts",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.32",
+		"@types/node": "^6.0.40",
+		"mocha": "^2.3.3",
+		"tslint": "^5.9.1",
+		"typescript": "^2.0.3",
+		"vscode": "^1.1.17"
+	}
+}
