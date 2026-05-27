@@ -1,0 +1,77 @@
+{
+	"name": "vim",
+	"displayName": "vim",
+	"description": "vim sample extension",
+	"version": "0.0.1",
+	"publisher": "alexdima",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"keybindings": [
+			{
+				"command": "vim.goToNormalMode",
+				"key": "escape",
+				"when": "editorTextFocus && !vim.inNormalMode"
+			},
+			{
+				"command": "vim.clearInput",
+				"key": "escape",
+				"when": "editorTextFocus && vim.hasInput"
+			},
+			{
+				"command": "redo",
+				"key": "ctrl+r",
+				"mac": "cmd+r",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "e",
+				"key": "ctrl+e",
+				"when": "editorTextFocus && vim.inNormalMode"
+			},
+			{
+				"command": "d",
+				"key": "ctrl+d",
+				"when": "editorTextFocus && vim.inNormalMode"
+			},
+			{
+				"command": "f",
+				"key": "ctrl+f",
+				"when": "editorTextFocus && vim.inNormalMode"
+			},
+			{
+				"command": "y",
+				"key": "ctrl+y",
+				"when": "editorTextFocus && vim.inNormalMode"
+			},
+			{
+				"command": "u",
+				"key": "ctrl+u",
+				"when": "editorTextFocus && vim.inNormalMode"
+			},
+			{
+				"command": "b",
+				"key": "ctrl+b",
+				"when": "editorTextFocus && vim.inNormalMode"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^2.1.4",
+		"vscode": "^1.1.17",
+		"@types/node": "*"
+	}
+}
