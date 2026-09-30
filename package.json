@@ -4,6 +4,9 @@
 	"publisher": "Microsoft",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"node": ">=26.10.0"
+	},
 	"scripts": {
 		"compile-all": "tsx .scripts/run-script.ts compile",
 		"lint-all": "tsx .scripts/run-script.ts lint",
@@ -15,7 +18,7 @@
 		"validate": "tsx .scripts/validate.ts"
 	},
 	"devDependencies": {
-		"@types/node": "^22.8.2",
+		"@types/node": "^26.0.0",
 		"glob": "^11.0.0",
 		"tsx": "^4.19.2",
 		"typescript": "^5.8.2"
